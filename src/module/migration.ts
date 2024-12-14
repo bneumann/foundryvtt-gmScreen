@@ -24,7 +24,7 @@ export async function _gmScreenMigrate() {
   // If we have migrated before
   if (migrated.status) {
     // If our version is newer than the NEEDS_MIGRATION_VERSION
-    if (isNewerVersion(getGame().modules.get(MODULE_ID)?.data.version ?? '0', NEEDS_MIGRATION_VERSION)) return;
+    if (isNewerVersion(getGame().modules.get(MODULE_ID)?.data?.version ?? '0', NEEDS_MIGRATION_VERSION)) return;
     // If we are on the same version, but have migrated.
     if (migrated.version === NEEDS_MIGRATION_VERSION) return;
   }
